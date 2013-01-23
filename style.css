@@ -10,7 +10,7 @@ Version: 2.0
 body, html {
   font: 13px/1.231 times, times new roman, serif;
   *font-size: small;
-  *font: x-small; 
+  *font: x-small;
 }
 
 select, input, button, textarea {
@@ -181,7 +181,7 @@ header {
         text-decoration:underline;
       }
 
-      
+
       header #contact-overlay > div #address {
         float: left; width: 150px; }
     header #contact-overlay .desktop-only {
@@ -213,7 +213,7 @@ header {
       width: 130px;
       overflow: hidden;
       float: left;
-      margin:24px 0 0 0; }  
+      margin:24px 0 0 0; }
   header #social-media-links {
     height: 30px;
     padding-bottom: 15px; }
@@ -259,13 +259,14 @@ header {
       font-style: italic; }
     header #perma-bar > a {
       display: block;
+      border-bottom: 5px solid #ccc;
       float: right;
       color: white;
-      line-height: 44px;
-      min-width: 44px;
-      padding: 0 5px;
-      text-indent: -999px;
+      line-height: 40px;
+      text-align: center;
+      padding: 0 20px;
       text-decoration: none;
+      margin-right: 4px;
       color: black;
       background-repeat: no-repeat;
       overflow: hidden;
@@ -274,28 +275,26 @@ header {
       -o-transition: 80ms ease all;
       transition: 80ms ease all; }
       header #perma-bar > a#toggle-hashtags {
-        background-image: url(images/toggle-filter.svg);
         text-indent: 0;
         background-position: 14px 11px; }
       .no-svg header #perma-bar > a#toggle-hashtags {
-	      background-image: url(images/toggle-filter.png);
+
       }
-      
+
       header #perma-bar > a#toggle-hashtags span {
-        padding-left: 44px;
-        padding-right: 10px;			     
+        padding-left: 10px;
+        padding-right: 10px;
       }
-      
+
       header #perma-bar > a#toggle-filter {
         background-image: url(images/toggle-filter.svg);
         background-position: 14px 11px; }
       .no-svg header #perma-bar > a#toggle-filter {
-        background-image: url(images/toggle-filter.png);}      
+        background-image: url(images/toggle-filter.png);}
       header #perma-bar > a#toggle-contact-pulldown {
-        background-image: url(images/toggle-overlay.svg);
-        background-position: 13px 11px; }
+        }
       .no-svg header #perma-bar > a#toggle-contact-pulldown {
-        background-image: url(images/toggle-overlay.png);
+
         }
       header #perma-bar > a:hover {
         border-bottom: 5px solid black; }
@@ -493,7 +492,7 @@ header {
   height: 206px;
   z-index: 1;
 }
-.no-svg .logo-overlay { 
+.no-svg .logo-overlay {
 	background: url(images/logo-type-black.png) no-repeat center center;
 }
 
@@ -556,8 +555,8 @@ header {
         -moz-transition: .4s ease background-color;
         -o-transition: .4s ease background-color;
         transition: .4s ease background-color; }
-    
-    
+
+
     #grid article.feature .content .revealable > p {
 	    width: 300px;
 	    margin: 15px 0 0 15px;
@@ -573,32 +572,32 @@ header {
       color:black;
       text-decoration: underline;
     }
-    
+
     #grid article.feature .content .revealable > p:last-child {
     	margin-bottom: 15px;
     }
-    
+
     #grid article.feature .content {
 	    position: relative;
     }
-    
+
     #grid article.feature .content .sidebar {
 	    float: right;
 	    width: 125px;
 	    margin: 15px 15px 0 0;
     }
-    
+
     #grid article .sidebar > img {
 		width: 100%;
 		height: auto;
-	}    
+	}
 
 
     #grid article.feature .content .sidebar .tags {
 	    clear: both;
 	    margin-bottom: 15px;
     }
-    
+
     #grid article.feature .content .sidebar .tags a:before {
     	content: "#";
     }
@@ -609,7 +608,7 @@ header {
     #grid article.feature .content .sidebar .tags li a:hover {
     	text-decoration: underline
     }
-    
+
     article .visual-area {
 	    position: relative;
     }
@@ -620,7 +619,7 @@ header {
     	/*width: 100% !important;*/
     	/*height: auto;*/
     }
-    
+
     article .zoom {
       text-align: center;
       color: white;
@@ -639,16 +638,16 @@ header {
       -moz-transition: .2s ease all;
       -ms-transition: .2s ease all;
       -o-transition: .2s ease all;
-      transition: .2s ease all;	    
+      transition: .2s ease all;
     }
-    
+
     .touch article .zoom {
 	    right: 0;
     }
-    
+
     .zoom-img img { width: 100%; height: auto;}
     img.zoom-excluded { width: 100%; height: auto;}
-    
+
 
     #grid article:hover .zoom {
       right: 0; }
@@ -756,10 +755,10 @@ header {
       #grid article.people-revised .royalSlider h2, #grid article.people-revised .rsContent h2 {
         font-size: 25px;
         padding-left: 18px; }
-    
- 
- 
- 
+
+
+
+
     #grid article .toggle {
 	    position: relative;
 	    background: white url(images/toggle.png) 453px 0 no-repeat;
@@ -778,25 +777,25 @@ header {
 	}
     #grid article.people-slidedown .toggle.active {
 	    background-position: 203px -47px;
-	}	
-	
-	
+	}
+
+
     #grid article .toggle:hover {
 	    background-color: #efefef;
 	    cursor: pointer;
     }
-    
+
     #grid article .revealable {
 	    display: none;
     }
-   
-   
-    
+
+
+
     #grid article.people-slidedown {
 	    min-height: 335px;
 	    position: relative;
     }
-    
+
     #grid article.people-slidedown > img {
 	    height: 250px;
 	    position: absolute;
@@ -816,13 +815,13 @@ header {
 	    display: none;
     }
     #grid article.people-slidedown .bio .content p:last-child {
-		margin-bottom: 0;   
+		margin-bottom: 0;
 	}
-	#grid article.people-slidedown .phone { 
+	#grid article.people-slidedown .phone {
 		margin-bottom: 15px !important;
 	}
-    
-    
+
+
     #grid article.feature .description {
       width: 300px;
       float: left;
@@ -837,12 +836,12 @@ header {
         margin-top: 2em;
       }
       #grid article.feature .sidebar h2:first-child {
-		margin: 0 0 .5em 0;    
+		margin: 0 0 .5em 0;
       }
       #grid article.feature .sidebar h2:first-child + h2 {
         margin-top: 0;
       }
-      
+
       #grid article.feature .sidebar .share ul {
         margin: 0;
         height: 22px; }
@@ -991,9 +990,9 @@ header {
   margin: 10px 10px 0 0 !important; }
 
 /***********************************************************
- *	
+ *
  *	Mobile
- *	
+ *
  ***********************************************************/
 
 /* Tablets */
@@ -1004,7 +1003,7 @@ header {
   html, body {
     background-image: none;
     padding-bottom: 60px; }
-    
+
       a#toggle-hashtags { display: none}
 
   header #contact-overlay {
@@ -1083,7 +1082,7 @@ header {
   #grid {
     padding: 0;
     overflow: visible !important; }
-  #grid.masonry { overflow: hidden !important; padding-right: 2px !important;}  
+  #grid.masonry { overflow: hidden !important; padding-right: 2px !important;}
   #grid.masonry article { margin-left: 2px !important;}
   #grid article {
 
@@ -1166,20 +1165,20 @@ header {
       min-width: 290px !important;
       max-width: 290px !important;
       /* display: none !important; */ }
-    
+
     .zoom { display: none !important;}
     .people-slidedown > img { width: 290px !important; height: 290px !important;}
     #grid article.people-slidedown .bio { min-height: 290px !important;}
     #grid article .toggle { background-position: 240px 0 !important;}
-    
+
     .no-royalSlider .rsContent { max-height: 163px !important;}
-    
+
     .revealable .sidebar { display: none;}
     .revealable p { width: 260px !important;}
-    
+
     .logo-overlay { top: 75px;}
     .without-mastheader-slider #grid { padding-top: 140px;}
-    
+
     #contact-details { height: 90px !important;}
 
 
@@ -1358,26 +1357,26 @@ a#toggle-hashtags { display: none !important}
     #grid article.twitter {
       margin: 0px;
       padding: 0px;
-      /* display: none !important; */ } 
+      /* display: none !important; */ }
     #grid.masonry {
       padding-bottom: 10px !important;
     }
-      
+
       .zoom { display: none !important;}
       .people-slidedown > img { width: 290px !important; height: 290px !important;}
       #grid article.people-slidedown .bio { min-height: 290px !important;}
       #grid article .toggle { background-position: 240px 0 !important;}
       #grid article .toggle.active { background-position: 240px -48px !important;}
-      
+
       .no-royalSlider .rsContent { max-height: 163px !important;}
-      
+
       .revealable .sidebar { display: none;}
       .revealable p { width: 260px !important;}
-      
+
       .logo-overlay { top: 75px;}
       .without-mastheader-slider #grid { padding-top: 140px;}
       #grid { padding-top: 140px !important;}
-      
+
       #contact-details { height: 90px !important;}
 
       header #hashtags { overflow: scroll !important;-webkit-overflow-scrolling: touch !important;}
@@ -1406,8 +1405,8 @@ a#toggle-hashtags { display: none !important}
 
 
 @media screen and (min-width: 570px) and (max-width: 930px) {
-  
-  
+
+
   #filter .icon {
     opacity: 0; }
   #filter a {

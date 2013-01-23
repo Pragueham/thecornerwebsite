@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
-   	<meta name="description" content="The Corner is a collaboration of advertising, technology and culture." /> 	
+   	<meta name="description" content="The Corner is a collaboration of advertising, technology and culture." />
 	<script src="<?=get_template_directory_uri()?>/js/modernizr.custom.min.js"></script>
 	<link rel="stylesheet" href="<?=get_template_directory_uri()?>/js/shadowbox/shadowbox.css">
 	<link rel="stylesheet" href="<?=get_template_directory_uri()?>/js/isotope.css" />
@@ -31,7 +31,7 @@
 
 /****************************************
  *
- *	Meet us 
+ *	Meet us
  *
  ****************************************/
 
@@ -47,21 +47,21 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 <div class="blind"></div>
 
 <header>
-	
+
 	<div id="contact-overlay">
 
 		<div id="map">
 			<div id="map_canvas"></div>
-		</div>		
+		</div>
 
 		<div id="contact-details">
 
 			<div id="col1" class="desktop-only">
 				<img src="http://www.thecornerlondon.com/site2.0/wordpress/wp-content/themes/thecorner/images/thecornerbuilding.jpg" alt="The Corner London Building"/>
 			</div>
-			
+
 			<div id="col2" class="desktop-only">
-				<h2 class="title">Contact Us</h2>						
+				<h2 class="title">Contact Us</h2>
 				<div id="contacts" class="desktop-only">
 					<p>
 					<em>New Business</em>
@@ -72,7 +72,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 					<em>Enquiries</em>
 					<a class="email" href="mailto:<?=$enquiries['email']?>"><?=$enquiries['name']?></a><br/>
 					<?=$enquiries['phone']?>
-					</p>				
+					</p>
 					<p>
 					<em>Placements</em>
 					<a class="email" href="mailto:<?=$placements['email']?>"><?=$placements['name']?></a><br/>
@@ -84,8 +84,8 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 
 			<div id="col3">
 				<div class="desktop-only">
-					<h2 class="title" >Address</h2>	
-					
+					<h2 class="title" >Address</h2>
+
 					<div id="address">
 						<p>
 						<?=nl2br($meet_us['address'])?>
@@ -94,7 +94,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 				</div>
 
 				<div class="mobile-only contact_block">
-					
+
 					<div id="address" >
 						<p>
 						<?=$meet_us['address']?>
@@ -103,7 +103,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 				</div>
 
 				<div class="contact_block">
-					<h2 class="title desktop-only">Follow Us</h2>	
+					<h2 class="title desktop-only">Follow Us</h2>
 
 					<div id="social-media-links">
 						<a class="social-media phone mobile-only" href="tel://<?=$enquiries['phone']?>">Phone</a>
@@ -116,14 +116,14 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 
 
 			</div>
-						
+
 		</div>
-		
+
 	</div>
 
 
 
-<!-- 
+<!--
 *******************************************************************************
 
 	PERMA BAR
@@ -136,7 +136,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 		<h2><? bloginfo('description') ?></h2>
 		<a id="toggle-contact-pulldown" href="#toggle-contact-pulldown">Contact</a>
 		<!--<a id="toggle-filter" href="#toggle-filter">Filter</a>-->
-		<a id="toggle-hashtags" href="#toggle-hashtags">&nbsp;</a>
+		<a id="toggle-hashtags" href="#toggle-hashtags">Find</a>
 	</div>
 
 <!--
@@ -181,7 +181,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 	        		<div class="tab-toggle"></div>
 	        	</a>
 	        </li>
-	        
+
 	        <li class="collaboration">
 	        	<a href="#filter=.collaboration" data-filter-value=".collaboration">
 	        		Collaboration
@@ -189,7 +189,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 	        		<div class="tab-toggle"></div>
 	        	</a>
 	        </li>
-	        
+
 	    </ul>
 	</nav>
 -->
@@ -199,15 +199,15 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 			<!-- <li><a href="#" data-filter-value="">all</a></li> -->
 			<? foreach ( get_tags('hide_empty=0') as $tag ) : ?>
 			<li><a href="#" data-filter-value=".<?=$tag->name?>"><?=$tag->name?></a></li>
-			<? endforeach; ?>	
+			<? endforeach; ?>
 		</ul>
 	</nav>
-	
+
 </header>
 
 <div class="logo-overlay"></div>
 
-<!-- 
+<!--
 *******************************************************************************
 
 	MASTHEAD SLIDER
@@ -232,7 +232,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 
 
 
-<!-- 
+<!--
 *******************************************************************************
 
 	INTRODUCTION SECTION
@@ -249,7 +249,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 		<div class="title-area">
 			<p class="title"><?=apply_filters('the_title', $who_we_are->post_title)?></p>
 		</div>
-		<div class="royalSlider rsDefault">			
+		<div class="royalSlider rsDefault">
 
 			<?
 			$attachments = get_posts( array(
@@ -268,7 +268,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 				}
 			}
 			?>
-			
+
 		</div>
 	</article>
 
@@ -280,7 +280,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 		<div class="title-area">
 			<p class="title">Clients</p>
 		</div>
-		<div class="royalSlider rsDefault">			
+		<div class="royalSlider rsDefault">
 			<?
 			$clients = get_terms( 'clients', 'orderby=name&hide_empty=0' );
 			$clients_meta = get_option('client-meta');
@@ -289,7 +289,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 				$client_logo_image_url = wp_get_attachment_url($client_logo_image_id, 'client-logo-slideshow', false, false);
 				echo '<a class="rsImg" href="' . $client_logo_image_url . '"></a>';
 			endforeach;
-			?>			
+			?>
 		</div>
 	</article>
 
@@ -305,38 +305,38 @@ $latest_project = get_posts( array(
     'post_type'       => 'project',
     'post_status'     => 'publish',
 ));
-foreach( $latest_project as $post ) : 
+foreach( $latest_project as $post ) :
 
 	setup_postdata($post);
 	$tags = get_the_tags();
-	
+
 	?>
-	
+
 	<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.$tag->name; ?>" data-hash="<?=$post->post_name?>">
-		
+
 		<div class="title-area">
 			<p class="title"><? the_title(); ?></p>
 		</div>
-		
+
 		<div class="content">
 			<? the_content(); ?>
 			</div> <!-- /.revealable -->
 		</div>
 
 	</article>
-	
+
 	<?
 endforeach;
 ?>
 
 
 
-	
+
 
 	<?
 	// ABOUT US
 	$about_us = get_page_by_path('about-us');
-	?>	
+	?>
 	<article class="about aboutus">
 		<div class="title-area">
 			<p class="title">
@@ -357,7 +357,7 @@ endforeach;
 		<div class="title-area">
 			<p class="title"><?=apply_filters('the_title', $street_photos->post_title)?></p>
 		</div>
-		<div class="royalSlider rsDefault">			
+		<div class="royalSlider rsDefault">
 
 			<?
 			$attachments = get_posts( array(
@@ -375,7 +375,7 @@ endforeach;
 				}
 			}
 			?>
-			
+
 		</div>
 	</article>
 
@@ -389,7 +389,7 @@ endforeach;
 <?
 
 // People, News, Work, sorted by post-date
-$cards = get_posts( array( 
+$cards = get_posts( array(
 	'numberposts'	=> 80,
 	'exclude'		=> $latest_project[0]->ID,
 	'post_type'		=> array('person', 'post', 'project'),
@@ -399,14 +399,14 @@ $cards = get_posts( array(
 ) );
 $i = 0;
 
-foreach( $cards as $post ) : 
+foreach( $cards as $post ) :
 
 	setup_postdata($post);
-	
+
 	$tags = wp_get_post_tags($post->ID, array( 'fields' => 'slugs' ));
 	$tags = implode(" ", $tags);
-	
-	if ( $post->post_type === 'person' ) : ?>	
+
+	if ( $post->post_type === 'person' ) : ?>
 
 		<article class="people people-slidedown <?=$tags?>">
 
@@ -426,7 +426,7 @@ foreach( $cards as $post ) :
 			</div>
 
 			<? the_post_thumbnail('people-portrait'); ?>
-			
+
 			<ul class="social-media">
 				<? if (slt_cf_field_exists('twitter')) : ?>
 					<li><a class="twitter" target="_blank" href="http://twitter.com/<?=slt_cf_field_value('twitter')?>">Twitter</a></li>
@@ -438,25 +438,25 @@ foreach( $cards as $post ) :
 					<li><a class="linkedin" target="_blank" href="<?=slt_cf_field_value('linkedin')?>">LinkedIn</a></li>
 				<? endif; ?>
 			</ul>
-			
+
 			<p class="email"><a href="mailto:<?=slt_cf_field_value('email')?>"><?=slt_cf_field_value('email')?></a></p>
-			
+
 			<? if (slt_cf_field_value('phone')) : ?>
 			<p class="phone"><a href="tel://<?=slt_cf_field_value('phone')?>"><?=slt_cf_field_value('phone')?></a></p>
 			<? else : ?>
 			<p class="phone no-phone">&nbsp;</p>
-			<? endif; ?>		
-			
+			<? endif; ?>
+
 		</article>
 
 	<? elseif ( $post->post_type === 'post' ) : ?>
 
-		<article class="news <?=$tags?> <? 
-		$tag_names = wp_get_post_tags($post->ID); 
+		<article class="news <?=$tags?> <?
+		$tag_names = wp_get_post_tags($post->ID);
 		foreach ( $tag_names as $tag )
 			echo ' '.$tag->name;
 		?>">
-	
+
 			<div class="title-area">
 				<p class="title">News</p>
 			</div>
@@ -467,20 +467,20 @@ foreach( $cards as $post ) :
 					$date_output_format = 'jS F Y';
 					if ( slt_cf_field_value('display-date') ) {
 						$time = strtotime( slt_cf_field_value('display-date') );
-						echo date( $date_output_format, $time );						
+						echo date( $date_output_format, $time );
 					} else {
 						the_time($date_output_format);
-					}					
+					}
 					?>
 				</p>
 				<h2><?php the_title(); ?></h2>
 				<? the_content(); ?>
 			</div>
 		</article>
-	
-	
+
+
 	<? elseif ( $post->post_type === 'project' ) : ?>
-		
+
 		<? $tags = get_the_tags(); ?>
 
 	<!--
@@ -491,26 +491,26 @@ foreach( $cards as $post ) :
 		*/
 		?>
 	-->
-		
+
 		<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.$tag->name; ?>" data-hash="<?=$post->post_name?>">
-			
+
 			<div class="title-area">
 				<p class="title"><? the_title(); ?></p>
 			</div>
-			
+
 			<div class="content">
 				<? the_content(); ?>
 				</div> <!-- /.revealable -->
 			</div>
 
-		</article>	
-	
+		</article>
+
 	<?
 	endif;
-		
+
 	// add a twitter card every 5 posts
-	
-	
+
+
 	if ( $i % 5 == 0 ) :
 		?>
 
@@ -519,17 +519,17 @@ foreach( $cards as $post ) :
 				<p class="title">Tweets</p>
 			</div>
 			<blockquote class="twitter-tweet"><!-- Populated via JS --></blockquote>
-		</article>		
-		
+		</article>
+
 		<?
 	endif;
-	
+
 	$i++;
-	
+
 
 endforeach;
 ?>
-	
+
 </section>
 
 <?
@@ -568,4 +568,4 @@ tcAddress = "<?=$address?>";
 <?php wp_footer(); ?>
 
 </body>
-</html>	
+</html>
