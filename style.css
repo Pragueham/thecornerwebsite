@@ -259,12 +259,12 @@ header {
       font-style: italic; }
     header #perma-bar > a {
       display: block;
-      font-size: 20px;
+      font-size: 16px;
       font-style: italic;
       float: right;
       line-height: 40px;
       text-align: center;
-      padding: 5px 20px 0 20px;
+      padding: 2px 20px 0 20px;
       text-decoration: none;
       margin-right: 4px;
       color: black;
@@ -276,7 +276,7 @@ header {
       transition: 80ms ease all;
     }
     header #perma-bar .arrow-up {
-      margin-top: -5px;
+      margin-top: -2px;
       text-align:center;
       width: 0;
       height: 0;
@@ -357,7 +357,7 @@ header {
       color: black;
       float: right;
       margin-right: 3%;
-      padding-top: 30px;
+      padding-top: 17px;
     }
 
     header #hashtags .remove-filter a:hover {
@@ -389,7 +389,7 @@ header {
         box-shadow: 1px 1px 1px 1px #eee;
        }
     header #hashtags .find-title {
-      font-size: 44px;
+      font-size: 30px;
       float: left;
       margin-left: 3%;
       padding: 10px;
