@@ -259,12 +259,12 @@ header {
       font-style: italic; }
     header #perma-bar > a {
       display: block;
-      border-bottom: 5px solid #ccc;
+      font-size: 20px;
+      font-style: italic;
       float: right;
-      color: white;
       line-height: 40px;
       text-align: center;
-      padding: 0 20px;
+      padding: 5px 20px 0 20px;
       text-decoration: none;
       margin-right: 4px;
       color: black;
@@ -273,7 +273,20 @@ header {
       -webkit-transition: 80ms ease all;
       -moz-transition: 80ms ease all;
       -o-transition: 80ms ease all;
-      transition: 80ms ease all; }
+      transition: 80ms ease all;
+    }
+    header #perma-bar .arrow-up {
+      margin-top: -5px;
+      text-align:center;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid black;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
       header #perma-bar > a#toggle-hashtags {
         text-indent: 0;
         background-position: 14px 11px; }
@@ -342,6 +355,9 @@ header {
       text-decoration: none;
       padding: 10px;
       color: black;
+      float: right;
+      margin-right: 3%;
+      padding-top: 30px;
     }
 
     header #hashtags .remove-filter a:hover {
@@ -350,21 +366,40 @@ header {
 
     header #hashtags ul {
       display: none;
-      padding-bottom:50px; }
+      padding-bottom:50px;
+      margin: 0 3%;
+       }
     header #hashtags li {
-      display: inline; }
+      display: inline;
+      margin: 5px;
+      }
     header #hashtags ul a {
       color: black;
-      font-size: 44px;
-      padding: 10px;
+      font-size: 28px;
+      padding: 10px 20px;
       font-style: italic;
-      text-decoration: none; }
-    header #hashtags ul a:before {
-      content: "#"; }
+      text-decoration: none;
+      background: white;
+      line-height: 2.2em;
+      white-space:nowrap;
+      -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+          border-radius: 2px;
+      -webkit-box-shadow: 1px 1px 1px 1px #eee;
+        box-shadow: 1px 1px 1px 1px #eee;
+       }
+    header #hashtags .find-title {
+      font-size: 44px;
+      float: left;
+      margin-left: 3%;
+      padding: 10px;
+    }
+
     header #hashtags ul a:hover {
-      background: white; }
+      text-decoration: underline; }
     header #hashtags ul a.selected {
-      background: white; }
+      background: black;
+      color: white; }
     header #hashtags.visible {
       visibility: visible;
       opacity: 1;
@@ -373,7 +408,8 @@ header {
       -o-transition: opacity .3s ease;
       transition: opacity .3s ease; }
       header #hashtags.visible ul {
-        display: block; }
+        display: block;
+        float: left; }
   header #filter {
     background: white;
     height: 0px;
@@ -1183,7 +1219,11 @@ header {
 
 
     header #hashtags { overflow: scroll;}
-    header #hashtags .remove-filter { margin-top: 34px; margin-bottom: .5em;}
+    header #hashtags .remove-filter {
+      margin-top: 34px;
+      margin-bottom: .5em;
+
+    }
 }
 
 /* Smart Phones */

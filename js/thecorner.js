@@ -481,10 +481,10 @@ $(function(){
 
 			resetDraggedCards();
 
-			if ( $this.text() === 'all' || $this.text() === 'Clear filter' || $this.text() === $('#toggle-hashtags').text() ) {
-				$('#toggle-hashtags').html( 'Find' );
+			if ( $this.text() === 'all' || $this.text() === 'Show all' || $this.text() === $('#toggle-hashtags').text() ) {
+				$('#toggle-hashtags').html( 'Find<div class="arrow-up"></div>' );
 			} else {
-				$('#toggle-hashtags').html( '<span>Find:&nbsp;'+$this.text()+'</span>' );
+				$('#toggle-hashtags').html($this.text()+'<div class="arrow-up"></div>' );
 			}
 
 			// clean up selected "categories" if any

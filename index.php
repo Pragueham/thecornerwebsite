@@ -134,9 +134,10 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 	<div id="perma-bar">
 		<h1><a id="scroll-to-top" href="#top"><? bloginfo('name') ?></a></h1>
 		<h2><? bloginfo('description') ?></h2>
-		<a id="toggle-contact-pulldown" href="#toggle-contact-pulldown">Contact</a>
+		<a id="toggle-contact-pulldown" href="#toggle-contact-pulldown">Contact<div class="arrow-up"></div></a>
 		<!--<a id="toggle-filter" href="#toggle-filter">Filter</a>-->
-		<a id="toggle-hashtags" href="#toggle-hashtags">Find</a>
+		<a id="toggle-hashtags" href="#toggle-hashtags">Find<div class="arrow-up"></div>
+</a>
 	</div>
 
 <!--
@@ -194,7 +195,10 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 	</nav>
 -->
 	<nav id="hashtags" class="scrollable">
-		<p class="remove-filter"><a href="#"  data-filter-value="">Clear filter</a></p>
+		<div>
+		<div class='find-title'>What are you looking for?</div>
+		<div class="remove-filter"><a href="#"  data-filter-value="">Show all</a></div>
+		</div>
 		<ul>
 			<!-- <li><a href="#" data-filter-value="">all</a></li> -->
 			<? foreach ( get_tags('hide_empty=0') as $tag ) : ?>
