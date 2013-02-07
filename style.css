@@ -299,6 +299,11 @@ header {
         padding-right: 10px;
       }
 
+      .active-tag {
+        font-style:normal;
+        padding: 0 5px !important;
+      }
+
       header #perma-bar > a#toggle-filter {
         background-image: url(images/toggle-filter.svg);
         background-position: 14px 11px; }
@@ -309,6 +314,7 @@ header {
       .no-svg header #perma-bar > a#toggle-contact-pulldown {
 
         }
+
       header #perma-bar > a:hover {
         border-bottom: 5px solid black; }
   header #hashtags {
@@ -385,8 +391,6 @@ header {
       -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
           border-radius: 2px;
-      -webkit-box-shadow: 1px 1px 1px 1px #eee;
-        box-shadow: 1px 1px 1px 1px #eee;
        }
     header #hashtags .find-title {
       font-size: 30px;
@@ -396,20 +400,24 @@ header {
     }
 
     header #hashtags ul a:hover {
-      text-decoration: underline; }
-    header #hashtags ul a.selected {
-      background: black;
-      color: white; }
+      background-color: black;
+      color: white;
+    }
+
     header #hashtags.visible {
       visibility: visible;
       opacity: 1;
       -webkit-transition: opacity .3s ease;
       -moz-transition: opacity .3s ease;
       -o-transition: opacity .3s ease;
-      transition: opacity .3s ease; }
+      transition: opacity .3s ease;
+    }
+
       header #hashtags.visible ul {
         display: block;
-        float: left; }
+        float: left;
+      }
+
   header #filter {
     background: white;
     height: 0px;
@@ -635,7 +643,7 @@ header {
     }
 
     #grid article.feature .content .sidebar .tags a:before {
-    	content: "#";
+
     }
     #grid article.feature .content .sidebar .tags li a {
 	    color: black;
@@ -1617,5 +1625,3 @@ a#toggle-hashtags { display: none !important}
     position: absolute;
     top: 150px;}
 }
-
-

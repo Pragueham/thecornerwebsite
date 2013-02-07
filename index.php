@@ -135,72 +135,15 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 		<h1><a id="scroll-to-top" href="#top"><? bloginfo('name') ?></a></h1>
 		<h2><? bloginfo('description') ?></h2>
 		<a id="toggle-contact-pulldown" href="#toggle-contact-pulldown">Contact<div class="arrow-up"></div></a>
-		<!--<a id="toggle-filter" href="#toggle-filter">Filter</a>-->
-		<a id="toggle-hashtags" href="#toggle-hashtags">Find<div class="arrow-up"></div>
-</a>
+		<a id="toggle-hashtags" href="#toggle-hashtags">Discover<div class="arrow-up"></div></a>
 	</div>
 
-<!--
-	<nav id="filter">
-	    <ul>
-	        <li class="work">
-	        	<a href="#filter=.work" data-filter-value=".work">
-	        		Work
-	        		<div class="icon"></div>
-	        		<div class="tab-toggle"></div>
-	        	</a>
-	        </li>
-
-	        <li class="technology">
-	        	<a href="#filter=.technology" data-filter-value=".technology">
-	        		Technology
-	        		<div class="icon"></div>
-	        		<div class="tab-toggle"></div>
-	        	</a>
-	        </li>
-
-	        <li class="people">
-	        	<a href="#filter=.people" data-filter-value=".people">
-	        		People
-	        		<div class="icon"></div>
-	        		<div class="tab-toggle"></div>
-	        	</a>
-	        </li>
-
-	        <li class="culture">
-	        	<a href="#filter=.culture" data-filter-value=".culture">
-	        		Culture
-	        		<div class="icon"></div>
-	        		<div class="tab-toggle"></div>
-	        	</a>
-	        </li>
-
-	        <li class="lab">
-	        	<a href="#filter=.lab" data-filter-value=".lab">
-	        		Lab
-	        		<div class="icon"></div>
-	        		<div class="tab-toggle"></div>
-	        	</a>
-	        </li>
-
-	        <li class="collaboration">
-	        	<a href="#filter=.collaboration" data-filter-value=".collaboration">
-	        		Collaboration
-	        		<div class="icon"></div>
-	        		<div class="tab-toggle"></div>
-	        	</a>
-	        </li>
-
-	    </ul>
-	</nav>
--->
 	<nav id="hashtags" class="scrollable">
 		<div>
 		<div class='find-title'>What are you looking for?</div>
 		<div class="remove-filter"><a href="#"  data-filter-value="">Show all</a></div>
 		</div>
 		<ul>
-			<!-- <li><a href="#" data-filter-value="">all</a></li> -->
 			<? foreach ( get_tags('hide_empty=0') as $tag ) : ?>
 			<li><a href="#" data-filter-value=".<?=$tag->name?>"><?=$tag->name?></a></li>
 			<? endforeach; ?>
@@ -229,12 +172,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 	<a class="rsImg mobile" href="images/masthead-slider/slide3-mobile.jpg"></a>
 </section>
 
-
-
-
 <section id="grid">
-
-
 
 <!--
 *******************************************************************************
@@ -243,7 +181,6 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 
 *******************************************************************************
 -->
-
 
 	<?
 	// WHO WE ARE
@@ -487,16 +424,7 @@ foreach( $cards as $post ) :
 
 		<? $tags = get_the_tags(); ?>
 
-	<!--
-		<?
-		/*
-		$clients = get_the_terms($post->ID, 'clients');
-		print_r($clients);
-		*/
-		?>
-	-->
-
-		<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.$tag->name; ?>" data-hash="<?=$post->post_name?>">
+		<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.$tag->slug; ?>" data-hash="<?=$post->post_name?>">
 
 			<div class="title-area">
 				<p class="title"><? the_title(); ?></p>
@@ -536,17 +464,6 @@ endforeach;
 
 </section>
 
-<?
-/*
-<script>
-<?
-$address = str_replace("\n", "<br/>", $meet_us['address']);
-$address = preg_replace("/[\n\r]/", "", $address);
-?>
-tcAddress = "<?=$address?>";
-</script>
-*/
-?>
 
 <script src="<?=get_template_directory_uri()?>/js/jquery-1.7.1.min.js"></script>
 <script src="<?=get_template_directory_uri()?>/js/jquery.isotope.min.js"></script>

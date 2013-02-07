@@ -161,6 +161,7 @@ $(function(){
 
 	if (location.hash) {
 		var hash = location.hash.replace(/^.*#/, '');
+
 		var $requested_article = $articles.filter('[data-hash="'+hash+'"]');
 		$requested_article.insertBefore($articles.first());
 	}
@@ -179,7 +180,7 @@ $(function(){
 		$filterLinks.removeClass('selected');
 		if ($filter.hasClass('visible')) $filter.removeClass('visible');
 		if ($hashtags.hasClass('visible')) $hashtags.removeClass('visible');
-		$('#toggle-hashtags').html( '&nbsp;' );
+		$('#toggle-hashtags').html( 'Discover<div class="arrow-up"></div>' );
 		$header.removeClass('show-pulldown');
 		$('.blind').removeClass('visible');
 
@@ -242,7 +243,7 @@ $(function(){
 		}
 	});
 
-	$('#toggle-hashtags').click(function(e){
+	$('#toggle-hashtags,').click(function(e){
 		if ($header.hasClass('show-pulldown')) {
 			$header.removeClass('show-pulldown');
 			$('.blind').removeClass('visible');
@@ -381,77 +382,9 @@ $(function(){
 	}
 
 
-
 	/**************************************************************
 	 *
-	 *	Isotope: "category" filtering (non-additive)
-	 *
-
-
-	$filterLinks.click(function(e){
-
-		resetDraggedCards();
-
-		// scroll to top of grid
-		$('html, body').scrollTop('0');
-
-		// clean up selected hashtags if any
-		$hashtagLinks.removeClass('selected');
-
-		var $this = $(this);
-
-		if ($this.hasClass('selected')) {
-			$this.removeClass('selected');
-		} else {
-			$filterLinks.removeClass('selected');
-			$this.toggleClass('selected');
-		}
-
-		var filter = $filterLinks.filter('.selected').attr('data-filter-value');
-		var sortOrder = (filter === '.people') ? 'random' : 'original-order';
-
-		if (filter) {
-			// show filtered Masonry grid
-			$grid
-			.removeClass('fitRows').addClass('masonry')
-			.isotope({ filter: filter, layoutMode : 'masonry', sortBy: sortOrder }, function( $changedItems, instance ) {
-				instance.$allAtoms.filter('.isotope-hidden').removeClass('is-filtered');
-				instance.$filteredAtoms.addClass('is-filtered');
-			});
-
-		} else {
-			// show All in randomised grid
-			$grid
-			.removeClass('masonry').addClass('fitRows')
-			.isotope({ filter: '', layoutMode : 'fitRows', sortBy: sortOrder }, function( $changedItems, instance ) {
-				instance.$allAtoms.filter('.isotope-hidden').removeClass('is-filtered');
-			});
-		}
-
-		// reLayout after transitions complete
-		setTimeout(function(){
-			$grid.isotope('reLayout');
-		}, 800);
-
-		e.preventDefault();
-
-	});
-
-	// set width in px, to overcome percentage fraction rounding bug in Webkit
-	$filter.find('li').each(function(){
-		$(this).css({'width' : $(window).width() / $filter.find('li').length});
-	});
-	$(window).resize(function(){
-		$filter.find('li').each(function(){
-			$(this).css({'width' : $(window).width() / $filter.find('li').length});
-		});
-	});
-
-	**************************************************************/
-
-	/**************************************************************
-	 *
-	 *	Isotope: hashtag filtering (additive or non-additive)
+	 *	Isotope: hashtag filtering : non-additive
 	 *
 	 **************************************************************/
 
@@ -482,53 +415,25 @@ $(function(){
 			resetDraggedCards();
 
 			if ( $this.text() === 'all' || $this.text() === 'Show all' || $this.text() === $('#toggle-hashtags').text() ) {
-				$('#toggle-hashtags').html( 'Find<div class="arrow-up"></div>' );
+				$('#toggle-hashtags').html( 'Discover<div class="arrow-up"></div>' );
 			} else {
-				$('#toggle-hashtags').html($this.text()+'<div class="arrow-up"></div>' );
+				$('#toggle-hashtags').html('Discover:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
 			}
 
-			// clean up selected "categories" if any
-			$filterLinks.removeClass('selected');
+			var filters = $this.attr('data-filter-value').replace(/ /g,'').toLowerCase();;
 
-			if ($this.hasClass('selected')) {
-				$hashtagLinks.removeClass('selected');
+			if (filters) {
+				$grid
+				.removeClass('fitRows').addClass('masonry')
+				.isotope({ filter: filters, layoutMode : 'masonry' }, function( $changedItems, instance ) {
+					instance.$allAtoms.filter('.isotope-hidden').removeClass('is-filtered');
+					instance.$filteredAtoms.addClass('is-filtered');
+				});
+			} else {
 				// reset Isotope layout mode and filters
 				$grid
 					.removeClass('masonry').addClass('fitRows')
 					.isotope({ filter: '', layoutMode : 'fitRows', sortBy: 'original-order' });
-			} else {
-
-				// option A: additive
-				/*
-				$this.toggleClass('selected');
-				var filters = [];
-				$hashtagLinks.filter('.selected').each(function(){
-					filters.push( $(this).attr('data-filter-value') );
-				});
-				filters = filters.join(', ');
-				*/
-				// end option A
-
-				// option B: non-additive
-				$hashtagLinks.removeClass('selected');
-				$this.addClass('selected');
-				var filters = $this.attr('data-filter-value');
-				// end option B
-
-				if (filters) {
-					$grid
-					.removeClass('fitRows').addClass('masonry')
-					.isotope({ filter: filters, layoutMode : 'masonry' }, function( $changedItems, instance ) {
-						instance.$allAtoms.filter('.isotope-hidden').removeClass('is-filtered');
-						instance.$filteredAtoms.addClass('is-filtered');
-					});
-				} else {
-					// reset Isotope layout mode and filters
-					$grid
-						.removeClass('masonry').addClass('fitRows')
-						.isotope({ filter: '', layoutMode : 'fitRows', sortBy: 'original-order' });
-				}
-
 			}
 
 			// reLayout after transitions complete
@@ -561,12 +466,31 @@ $(function(){
 
 
 	$('.sidebar .tags a').click(function(e){
-		$hashtagLinks.filter(':contains("' + $(this).text() + '")').trigger('click');
+		$this = $(this);
 
-		if ($hashtags.hasClass('visible')) $hashtags.removeClass('visible');
-		$('.blind').removeClass('visible');
+			var filters = '.' + $this.text().replace(/ /g,'').toLowerCase();
 
-		e.preventDefault();
+			if (filters) {
+				$grid.removeClass('fitRows').addClass('masonry')
+				$grid.isotope({ filter: filters, layoutMode : 'masonry' }, function( $changedItems, instance ) {
+					instance.$allAtoms.filter('.isotope-hidden').removeClass('is-filtered');
+					instance.$filteredAtoms.addClass('is-filtered');
+				});
+				$('#toggle-hashtags').html('Discover:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
+			} else {
+				// reset Isotope layout mode and filters
+				$grid
+					.removeClass('masonry').addClass('fitRows')
+					.isotope({ filter: '', layoutMode : 'fitRows', sortBy: 'original-order' });
+			}
+
+			// reLayout after transitions complete
+			setTimeout(function(){
+				$grid.isotope('reLayout');
+				resizeGrid();
+			}, 800);
+
+			$(window).resize(resizeGrid);
 	});
 
 
