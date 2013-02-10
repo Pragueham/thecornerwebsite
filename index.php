@@ -135,7 +135,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 		<h1><a id="scroll-to-top" href="#top"><? bloginfo('name') ?></a></h1>
 		<h2><? bloginfo('description') ?></h2>
 		<a id="toggle-contact-pulldown" href="#toggle-contact-pulldown">Contact<div class="arrow-up"></div></a>
-		<a id="toggle-hashtags" href="#toggle-hashtags">Discover<div class="arrow-up"></div></a>
+		<a id="toggle-hashtags" href="#toggle-hashtags">Explore<div class="arrow-up"></div></a>
 	</div>
 
 	<nav id="hashtags" class="scrollable">
@@ -470,7 +470,7 @@ endforeach;
 <script src="<?=get_template_directory_uri()?>/js/jquery.royalslider.min.js"></script>
 <script src="<?=get_template_directory_uri()?>/js/jquery.event.drag-2.2.js"></script>
 <script src="<?=get_template_directory_uri()?>/js/shadowbox/shadowbox.js"></script>
-<script src="<?=get_template_directory_uri()?>/js/thecorner.js?v=1"></script>
+<script src="<?=get_template_directory_uri()?>/js/thecorner.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 

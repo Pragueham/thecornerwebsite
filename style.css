@@ -260,7 +260,7 @@ header {
     header #perma-bar > a {
       display: block;
       font-size: 16px;
-      font-style: italic;
+      font-style: normal;
       float: right;
       line-height: 40px;
       text-align: center;
@@ -300,7 +300,7 @@ header {
       }
 
       .active-tag {
-        font-style:normal;
+        font-style:italic;
         padding: 0 5px !important;
       }
 

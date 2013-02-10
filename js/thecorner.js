@@ -180,7 +180,7 @@ $(function(){
 		$filterLinks.removeClass('selected');
 		if ($filter.hasClass('visible')) $filter.removeClass('visible');
 		if ($hashtags.hasClass('visible')) $hashtags.removeClass('visible');
-		$('#toggle-hashtags').html( 'Discover<div class="arrow-up"></div>' );
+		$('#toggle-hashtags').html( 'Explore<div class="arrow-up"></div>' );
 		$header.removeClass('show-pulldown');
 		$('.blind').removeClass('visible');
 
@@ -244,6 +244,10 @@ $(function(){
 	});
 
 	$('#toggle-hashtags,').click(function(e){
+		$('#toggle-hashtags').html( 'Explore<div class="arrow-up"></div>');
+			console.log("derp");
+			$grid.removeClass('masonry').addClass('fitRows')
+			$grid.isotope({ filter: '', layoutMode : 'fitRows', sortBy: 'original-order' });
 		if ($header.hasClass('show-pulldown')) {
 			$header.removeClass('show-pulldown');
 			$('.blind').removeClass('visible');
@@ -253,7 +257,13 @@ $(function(){
 	});
 
 	$('#toggle-filter').click(function(e){
-		if ($hashtags.hasClass('visible')) $hashtags.removeClass('visible');
+
+		if ($hashtags.hasClass('visible')) {
+			$hashtags.removeClass('visible');
+
+
+		}
+
 		if ($header.hasClass('show-pulldown')) {
 			$header.removeClass('show-pulldown');
 			$('.blind').removeClass('visible');
@@ -261,6 +271,7 @@ $(function(){
 		$filter.toggleClass('visible');
 		e.preventDefault();
 	});
+
 
 	$('#toggle-contact-pulldown').click(function(e){
 
@@ -415,9 +426,9 @@ $(function(){
 			resetDraggedCards();
 
 			if ( $this.text() === 'all' || $this.text() === 'Show all' || $this.text() === $('#toggle-hashtags').text() ) {
-				$('#toggle-hashtags').html( 'Discover<div class="arrow-up"></div>' );
+				$('#toggle-hashtags').html( 'Explore<div class="arrow-up"></div>' );
 			} else {
-				$('#toggle-hashtags').html('Discover:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
+				$('#toggle-hashtags').html('Explore:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
 			}
 
 			var filters = $this.attr('data-filter-value').replace(/ /g,'').toLowerCase();;
@@ -476,7 +487,7 @@ $(function(){
 					instance.$allAtoms.filter('.isotope-hidden').removeClass('is-filtered');
 					instance.$filteredAtoms.addClass('is-filtered');
 				});
-				$('#toggle-hashtags').html('Discover:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
+				$('#toggle-hashtags').html('Explore:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
 			} else {
 				// reset Isotope layout mode and filters
 				$grid
