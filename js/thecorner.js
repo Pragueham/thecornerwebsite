@@ -245,7 +245,6 @@ $(function(){
 
 	$('#toggle-hashtags,').click(function(e){
 		$('#toggle-hashtags').html( 'Explore<div class="arrow-up"></div>');
-			console.log("derp");
 			$grid.removeClass('masonry').addClass('fitRows')
 			$grid.isotope({ filter: '', layoutMode : 'fitRows', sortBy: 'original-order' });
 		if ($header.hasClass('show-pulldown')) {

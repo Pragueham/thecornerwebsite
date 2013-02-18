@@ -201,7 +201,7 @@ header {
       float: left;
       margin-right: 40px; }
     header #contact-details #col2 {
-      width: 106px;
+      width: 150px;
       overflow: hidden;
       float: left;
       margin:24px 40px 0 0; }
@@ -210,7 +210,7 @@ header {
       header #contact-details #col2 a.email:hover {
       color:#CCC; }
     header #contact-details #col3 {
-      width: 130px;
+      width: 150px;
       overflow: hidden;
       float: left;
       margin:24px 0 0 0; }

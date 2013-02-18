@@ -57,7 +57,7 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 		<div id="contact-details">
 
 			<div id="col1" class="desktop-only">
-				<img src="http://www.thecornerlondon.com/site2.0/wordpress/wp-content/themes/thecorner/images/thecornerbuilding.jpg" alt="The Corner London Building"/>
+				<img src="<?=get_template_directory_uri()?>/images/thecornerbuilding.jpg" alt="The Corner London Building"/>
 			</div>
 
 			<div id="col2" class="desktop-only">
