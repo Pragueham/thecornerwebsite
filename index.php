@@ -253,7 +253,7 @@ foreach( $latest_project as $post ) :
 
 	?>
 
-	<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.$tag->name; ?>" data-hash="<?=$post->post_name?>">
+	<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.strtolower($tag->name); ?>" data-hash="<?=$post->post_name?>">
 
 		<div class="title-area">
 			<p class="title"><? the_title(); ?></p>

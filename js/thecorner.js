@@ -430,7 +430,9 @@ $(function(){
 				$('#toggle-hashtags').html('Explore:<span class="active-tag">' + $this.text()+'</span><div class="arrow-up"></div>' );
 			}
 
-			var filters = $this.attr('data-filter-value').replace(/ /g,'').toLowerCase();;
+			var filters = $this.attr('data-filter-value').replace(/ /g,'').toLowerCase();
+
+			console.log(filters)
 
 			if (filters) {
 				$grid
