@@ -735,7 +735,7 @@ $(function(){
 
 	var numberOfTweets = $tweet_containers.length + 2;
 	console.log(numberOfTweets);
-	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=thecornerldn&count='+numberOfTweets+'&callback=?', function(tweet){
+	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=thecornerldn&count='+numberOfTweets+'&include_rts=1&callback=?', function(tweet){
 
 		$tweet_containers.each(function(i){
 			$(this).find('blockquote').html('\
