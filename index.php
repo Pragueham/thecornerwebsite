@@ -174,6 +174,46 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 
 <section id="grid">
 
+	<!--
+	*******************************************************************************
+
+		FEATURED WORK 
+
+	*******************************************************************************
+	-->
+
+	<?
+	$latest_project = get_posts( array(
+	    'numberposts'     => 2,
+	    'orderby'         => 'post_date',
+	    'order'           => 'DESC',
+	    'post_type'       => 'project',
+	    'post_status'     => 'publish',
+	));
+	foreach( $latest_project as $post ) :
+
+		setup_postdata($post);
+		$tags = get_the_tags();
+
+		?>
+
+		<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.strtolower($tag->name); ?>" data-hash="<?=$post->post_name?>">
+
+			<div class="title-area">
+				<p class="title"><? the_title(); ?></p>
+			</div>
+
+			<div class="content">
+				<? the_content(); ?>
+				</div> <!-- /.revealable -->
+			</div>
+
+		</article>
+
+		<?
+	endforeach;
+	?>
+
 <!--
 *******************************************************************************
 
@@ -236,44 +276,6 @@ $thecorner_twitter_clean = str_replace("@", "", $meet_us['twitter']); // remove 
 
 
 
-
-
-<?
-$latest_project = get_posts( array(
-    'numberposts'     => 1,
-    'orderby'         => 'post_date',
-    'order'           => 'DESC',
-    'post_type'       => 'project',
-    'post_status'     => 'publish',
-));
-foreach( $latest_project as $post ) :
-
-	setup_postdata($post);
-	$tags = get_the_tags();
-
-	?>
-
-	<article class="feature<? if ($tags) foreach($tags as $tag) echo ' '.strtolower($tag->name); ?>" data-hash="<?=$post->post_name?>">
-
-		<div class="title-area">
-			<p class="title"><? the_title(); ?></p>
-		</div>
-
-		<div class="content">
-			<? the_content(); ?>
-			</div> <!-- /.revealable -->
-		</div>
-
-	</article>
-
-	<?
-endforeach;
-?>
-
-
-
-
-
 	<?
 	// ABOUT US
 	$about_us = get_page_by_path('about-us');
@@ -332,7 +334,7 @@ endforeach;
 // People, News, Work, sorted by post-date
 $cards = get_posts( array(
 	'numberposts'	=> 80,
-	'exclude'		=> $latest_project[0]->ID,
+	'exclude'		=> array($latest_project[0]->ID, $latest_project[1]->ID),
 	'post_type'		=> array('person', 'post', 'project'),
 	'post_status'	=> array('publish', 'future'),
 	'orderby'		=> 'post_date',

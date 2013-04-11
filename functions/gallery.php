@@ -103,10 +103,10 @@ function corner_gallery_shortcode($attr) {
 			} else {
 				
 				if ($i == 1 && slt_cf_field_value('exclude-first-img-from-zoom')) {
-					$output .= '<a class="zoom match-3" href="'.$image_large[0].'" rel="shadowbox['.$post->post_name.']" title="'.get_the_title($post->ID).'"><img src="http://thecornerlondon.com/site2.0/images/zoom.png" alt="Zoom" height="25" width="25"></a>';
+					$output .= '<a class="zoom match-3" href="'.$image_large[0].'" rel="shadowbox['.$post->post_name.']" title="'.get_the_title($post->ID).'"><img src="'.$zoom_button_url.'" alt="Zoom" height="25" width="25"></a>';
 					
 				} else {
-					$output .= '<a style="display:none" class="zoom match-4" href="'.$image_large[0].'" rel="shadowbox['.$post->post_name.']" title="'.get_the_title($post->ID).'"><img src="http://thecornerlondon.com/site2.0/images/zoom.png" alt="Zoom" height="25" width="25"></a>';
+					$output .= '<a style="display:none" class="zoom match-4" href="'.$image_large[0].'" rel="shadowbox['.$post->post_name.']" title="'.get_the_title($post->ID).'"><img src="'.$zoom_button_url.'" alt="Zoom" height="25" width="25"></a>';
 				}
 				
 	

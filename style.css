@@ -201,7 +201,7 @@ header {
       float: left;
       margin-right: 40px; }
     header #contact-details #col2 {
-      width: 150px;
+      width: 106px;
       overflow: hidden;
       float: left;
       margin:24px 40px 0 0; }
@@ -210,7 +210,7 @@ header {
       header #contact-details #col2 a.email:hover {
       color:#CCC; }
     header #contact-details #col3 {
-      width: 150px;
+      width: 130px;
       overflow: hidden;
       float: left;
       margin:24px 0 0 0; }
@@ -655,6 +655,7 @@ header {
 
     article .visual-area {
 	    position: relative;
+      cursor:pointer;
     }
     article .visual-area.no-slider {
 	    height: 280px;
@@ -1553,7 +1554,9 @@ a#toggle-hashtags { display: none !important}
 
 #sb-wrapper-inner {
   border-color: transparent;
-  border: 0; }
+  border: 0; 
+  cursor:pointer;
+}
 
 #sb-title {
   padding: 15px;
